@@ -10,6 +10,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
+    port: 4000
   },
   performance: {
     hints: false,
