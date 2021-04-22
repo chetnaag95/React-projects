@@ -3,8 +3,35 @@
   <head>
     <title>HTML 5 Slot Machine</title>
   </head>
+  <style>
+     
+     body{
+       background-color: #f4f4fb;
+     }
+     #root{
+       position: relative;
+       z-index: 1000;
+     }
+     .body-background-inner {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          height: 100%;
+          transition: transform .15s ease-out 0s;
+          transform: translate(-50%,-50%);
+          transform-origin: 50% 50%;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+          will-change: transform;
+      }
+  </style>
   <body>
     <div id="root">
+    </div>
+    <div class="body-background">
+      <div class="body-background-inner" style="background-image: url(https://demo2wpopal.b-cdn.net/spker/wp-content/uploads/2019/07/bg1.svg); transform: translate(-50%, -50%) scale(1);"></div>
     </div>
   </body>
 </html>
