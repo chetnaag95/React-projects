@@ -1,11 +1,14 @@
 
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, memo } from 'react';
 import Search from './Search';
 
-export default ()=>{
+let k = ()=>{
     return (
         <header style={{width: 800, margin: 'auto', paddingBottom: 20}}>
             <Search/>
         </header>
     )
 }
+
+
+export default memo(k)
