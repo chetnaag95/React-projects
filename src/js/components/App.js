@@ -1,14 +1,20 @@
 import React, {Component} from 'react'
 import List from './List';
 import WithLoadingComponent from './withLoading'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {withAuth} from './withAuth'
+import { createBrowserHistory } from 'history'
 
+const history = createBrowserHistory();
 const ListWithLoading = WithLoadingComponent(List);
 
+
 class App extends Component{
-      shouldComponentUpdate(){
-         return false;
-      }
+      // shouldComponentUpdate(){
+      //    return false;
+      // }
       render(){
+            console.log("render App");
             let listOf = [
                   { fullName : 1 },
                   { fullName : 2 },
@@ -21,14 +27,25 @@ class App extends Component{
             ]
              
       	 return(
-      	 	<div>
-                        <ListWithLoading isLoading={false} repos={listOf}/>
-                        <h1>Hi, this is my react project</h1>
+                  <div>
+                        <Router history={history}>
+                                    <Switch>
+                                          <Route exact path="/">
+                                                <ListWithLoading isLoading={false} repos={listOf}/>
+                                          </Route>
+                                          <Route path="/test">
+                                                <ListWithLoading isLoading={false} repos={listOf}/>
+                                          </Route>
+                                    </Switch>
+                        </Router>
                   </div>
       	 )
       }  
 }
 
-export default App;
+export default withAuth(App);
 
 // export default HigherOrderComponent(<h1>Hi, this is my react project</h1>);
+
+
+
