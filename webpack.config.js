@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: ["./src/js/index.js", "./src/css/style.css"],
+  entry: ["./client/index.js", "./src/css/style.css"],
   devtool: 'eval-source-map',
   output: {
     filename: "bundle.[contenthash].js",
